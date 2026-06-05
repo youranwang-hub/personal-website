@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>论文 &middot; 王悠然</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html" class="active">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="page-header site-container">
+      <div class="page-title">论文</div>
+      <div class="page-subtitle">学术写作与竞赛论文。</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+
+      <!-- 统计建模一等奖 -->
+      <div class="writing-entry">
+        <div class="wrapper">
+          <span class="award-badge">一等奖</span>
+          <span class="writing-date">2026 &middot; 北京交通大学统计建模大赛</span>
+        </div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">新质生产力冲击下的"人-产"错配与重构：AI 大模型对高校毕业生就业质量的异质性影响及区域产业匹配优化</div>
+        <div class="writing-excerpt">以新质生产力为理论框架，分析 AI 大模型对不同专业、不同地区高校毕业生就业质量的差异化冲击，探讨区域产业匹配优化路径。</div>
+      </div>
+
+      <!-- 数学建模 -->
+      <div class="writing-entry">
+        <div class="writing-date">2026 &middot; 北京交通大学数学建模大赛</div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">下肢外骨骼助力：机器人系统设计与优化问题</div>
+        <div class="writing-excerpt" style="display: flex; align-items: center; gap: 10px;">
+          <span>针对下肢外骨骼机器人的结构参数与运动控制进行数学建模与优化求解。</span>
+          <span style="font-size: 10px; color: var(--ink-hint); font-family: var(--serif); white-space: nowrap;">结果待公布</span>
+        </div>
+      </div>
+
+      <!-- 课程论文 -->
+      <div class="writing-entry">
+        <div class="writing-date">2026 &middot; 课程论文</div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">智能驾驶纯视觉感知的瓶颈及其雷达融合补偿机制</div>
+        <div class="writing-excerpt">以小米 SU7 事故为核心背景案例，论证纯视觉感知在极端场景下的固有瓶颈，以及引入雷达多模态融合的必要性和补偿机制。已收集 22 篇中英文文献。</div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>

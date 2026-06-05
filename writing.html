@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>写作 &middot; 王悠然</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="page-header site-container">
+      <div class="page-title">写作</div>
+      <div class="page-subtitle">记录想法，不求量，求质感。</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+
+      <div class="writing-entry">
+        <div class="writing-date">2026 年 6 月 &middot; 课程论文</div>
+        <a href="#" class="writing-title">智能驾驶纯视觉感知瓶颈与雷达融合补偿机制综述</a>
+        <div class="writing-excerpt">
+          以小米 SU7 事故为核心背景案例，论证「纯视觉存在感知瓶颈 → 需要雷达进行融合补偿」的核心论点。
+          已收集 22 篇中英文文献，论文撰写中。
+        </div>
+      </div>
+
+      <div class="writing-entry">
+        <div class="writing-date">2026 年 5 月 &middot; 学习笔记</div>
+        <a href="#" class="writing-title">CSS 学习笔记</a>
+        <div class="writing-excerpt">
+          基于菜鸟教程，从零入门前端。记录踩过的坑、没想到但很有用的 CSS 特性，以及这个个人网站设计过程中的思考。
+        </div>
+      </div>
+
+      <div class="writing-entry">
+        <div class="writing-date">2026 年 4 月 &middot; 随笔</div>
+        <a href="#" class="writing-title">项目驱动的学习方式</a>
+        <div class="writing-excerpt">
+          为什么我觉得边做项目边学比纯听课有效得多。记录大一这一年用项目倒逼自己成长的体会。
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>

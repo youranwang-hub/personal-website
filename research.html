@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科研 &middot; 王悠然</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html" class="active">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="page-header site-container">
+      <div class="page-title">科研</div>
+      <div class="page-subtitle">大学生创新训练项目。</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              面向交换机漏洞发掘的自动化闭环智能体设计与实现
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">大创项目</span>
+        </div>
+        <div class="project-desc">以 LLM + LangGraph 构建主动自优化智能体，实现固件漏洞的自主感知、动态路由与经验闭环积累。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p><strong>对比传统方案</strong>：传统工具依赖预设脚本、被动静态扫描，无法理解固件底层逻辑，难以识别未知后门与新型攻击。</p>
+            <p><strong>本项目三大创新：</strong></p>
+            <ul style="margin: 8px 0 8px 16px; font-size: 12px; color: var(--ink-secondary); line-height: 2; font-family: var(--serif);">
+              <li>从「死板匹配」到「语义理解」——引入大语言模型（LLM）阅读固件反汇编代码，系统能像安全专家一样理解程序真实业务逻辑，精准挖掘隐藏后门。</li>
+              <li>从「固定脚本」到「动态路由」——利用 LangGraph 智能体编排，根据上一步分析结果自主决定下一步是深入发包测试还是跳过无关模块，极大提高检测效率。</li>
+              <li>从「一次性检测」到「经验闭环」——测试成功的漏洞特征自动写回知识库，随着测试设备增多，系统积累的经验越丰富，后续检测越准。</li>
+            </ul>
+            <p><strong>核心架构</strong>：感知环境 → 推理策略 → 执行行动 → 反馈进化，形成主动自优化的智能决策闭环。</p>
+            <p>技术方向：大语言模型、LangGraph 智能体框架、固件安全分析、自动化漏洞挖掘。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">LangGraph</span>
+          <span class="project-tag">固件安全</span>
+          <span class="project-tag">大创</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              面向儿童英语发音的数字人口型与舌位可视化纠错系统
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">大创项目</span>
+        </div>
+        <div class="project-desc">通过数字人技术将英语发音的口型与舌位可视化，为儿童提供直观的纠错反馈。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>传统英语发音教学依赖教师口耳相传，儿童难以看到自己与标准发音之间的解剖学差异。本项目以数字人技术为媒介，将抽象的音标对比转化为直观的口型与舌位三维动画。</p>
+            <p>方向涉及：语音识别、数字人动画、计算机视觉、教育技术。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">数字人</span>
+          <span class="project-tag">语音识别</span>
+          <span class="project-tag">大创</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+
+    function toggleDetail(card) {
+      const detail = card.querySelector('.project-detail');
+      const icon = card.querySelector('.expand-icon');
+      if (!detail) return;
+      document.querySelectorAll('.project-detail.open').forEach(d => {
+        if (d !== detail) {
+          d.classList.remove('open');
+          const c = d.closest('.project-card');
+          if (c) c.querySelector('.expand-icon')?.classList.remove('open');
+        }
+      });
+      detail.classList.toggle('open');
+      if (icon) icon.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上新了！我的饭 · 项目详情</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <div class="site-container" style="margin-bottom: 24px;">
+      <a href="projects.html" class="back-link">
+        <span class="back-arrow">&larr;</span>
+        返回项目列表
+      </a>
+    </div>
+
+    <section class="page-header site-container">
+      <div class="page-title">上新了！我的饭</div>
+      <div class="page-subtitle">北京交通大学食堂信息共享平台</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+      <div class="detail-meta">
+        <div class="detail-meta-item">时间 <span>2025 — 进行中</span></div>
+        <div class="detail-meta-item">角色 <span>独立开发</span></div>
+        <div class="detail-meta-item">技术栈 <span>Python Flask · SQLite · Bootstrap 5</span></div>
+        <div class="detail-meta-item">部署 <span>PythonAnywhere</span></div>
+      </div>
+
+      <div class="detail-body">
+        <h3>项目背景</h3>
+        <p>北京交通大学食堂菜品丰富，但同学们选菜常靠运气、踩雷时有发生。「上新了！我的饭」希望为校园师生提供一个菜品浏览、评分评论、社区交流和三餐打卡的一站式平台，让每一次吃饭都有据可依。</p>
+        <p>目前已收录 <strong>6 个食堂楼层、48 个档口、1,193 道菜品</strong>，已上线运行。</p>
+
+        <h3>技术架构</h3>
+        <p>整体采用服务端渲染（SSR）架构——Python Flask 通过 Jinja2 模板引擎直接渲染页面，前端仅处理少量交互逻辑（搜索联想、图片预览等），不引入前端框架，保持轻量和低依赖。</p>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">层级</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">技术选型</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">前端</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">HTML + CSS + JavaScript + Bootstrap 5</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">后端</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Python Flask + Jinja2</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">数据库</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">SQLite（10 张表）</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">认证</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Flask-Login + bcrypt 密码加密</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">部署</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">PythonAnywhere</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>核心功能</h3>
+        <p><strong>食堂 → 档口 → 菜品三级浏览</strong>：食堂详情展示营业时间与实时人流量，菜品支持五星评分（一人一票可修改）与 500 字文字评论。16 个品类配有 AI 生成的手绘水彩风格图片。</p>
+        <p><strong>智能首页</strong>：基于「评分×评论数」的推荐算法展示今日推荐，支持特价高亮（原价划线对比），以及根据北京时间自动判断早/午/晚餐时段的人流量提示。</p>
+        <p><strong>社区</strong>：用户可发帖（文字 + 最多 9 张图片 + 关联菜品），支持点赞、评论，发帖时菜名模糊匹配数据库。</p>
+        <p><strong>三餐打卡</strong>：早餐 +3 分 / 午晚餐 +2 分的积分体系，打卡日历展示当日各餐状态，积分排行榜 TOP 10。</p>
+        <p><strong>管理后台</strong>：数据统计面板、用户管理、违规内容删除、特价菜品设置。</p>
+
+        <h3>设计亮点</h3>
+        <p><strong>时区处理</strong>：自定义 <code>beijing_now()</code> 函数，不依赖服务器本地时区，确保餐次提示、打卡日期、人流量判断在全球任意服务器上都能正确显示北京时间。</p>
+        <p><strong>图片回退机制</strong>：<code>get_dish_image()</code> 三级回退——菜品自有图片 → 品类代表图 → 占位图标，保证任何菜品都有视觉展示。</p>
+        <p><strong>响应式布局</strong>：PC 端顶部导航 + 移动端底部 TabBar，适配校园实际使用场景（手机为主）。</p>
+
+        <p style="margin-top: 24px;">
+          <a href="http://wangyouran.pythonanywhere.com" target="_blank">访问上线版本 &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>

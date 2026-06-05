@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱好 &middot; 王悠然</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html" class="active">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="page-header site-container">
+      <div class="page-title">爱好</div>
+      <div class="page-subtitle">代码之外，这几件事构成了我。</div>
+    </section>
+
+    <!-- 摄影 -->
+    <section class="section site-container" id="photo-gallery" style="padding-top: 0;">
+      <div class="section-label">摄影</div>
+      <p style="font-size: 12px; color: var(--ink-secondary); font-family: var(--serif); line-height: 1.8; margin-bottom: 20px; max-width: 480px;">
+        喜欢带着相机走在街头，捕捉光线和构图里不经意的美感。偏好自然光和城市细节，不太拍人像。
+      </p>
+
+      <!-- 图片画廊 — 横向堆叠，hover 展开 -->
+      <div class="gallery-stack" id="gallery">
+        <div class="gallery-item" data-index="0">
+          <img src="photos/IMG_20230803_162251.jpg" alt="摄影作品 1" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="photos/IMG_20230805_094213.jpg" alt="摄影作品 2" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="photos/IMG_20250801_101516.jpg" alt="摄影作品 3" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="3">
+          <img src="photos/IMG_20250920_091611.jpg" alt="摄影作品 4" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="4">
+          <img src="photos/IMG_20250920_091704.jpg" alt="摄影作品 5" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="5">
+          <img src="photos/IMG_20260312_165911.jpg" alt="摄影作品 6" loading="lazy">
+        </div>
+      </div>
+
+      <a href="#" class="gallery-more" onclick="return false;" title="后续接入外部相册链接">想看更多？&rarr;</a>
+    </section>
+
+    <!-- 吉他 -->
+    <section class="section site-container">
+      <div class="section-label">吉他</div>
+
+      <div class="hobby-card" style="max-width: 440px;">
+        <div class="hobby-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3L6 9v6l12 6V3z"/><circle cx="6" cy="12" r="2"/></svg>
+        </div>
+        <div class="hobby-title">在学中</div>
+        <div class="hobby-desc">喜欢指弹胜过扫弦。拨弦时大脑放空，只有手指在动——一种全然专注的放松。</div>
+
+        <div class="douyin-id">抖音号: dyitnb93lmqm</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭"></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="上一张"><div class="lightbox-arrow"></div></button>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="下一张"><div class="lightbox-arrow"></div></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <script>
+    // --- Gallery Data ---
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const item = galleryItems[index];
+      if (!item) return;
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCounter.textContent = (index + 1) + ' / ' + galleryItems.length;
+      lightbox.classList.add('open');
+      updateNavButtons();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function prevImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        const img = galleryItems[currentIndex].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryItems.length;
+        updateNavButtons();
+      }
+    }
+
+    function nextImage() {
+      if (currentIndex < galleryItems.length - 1) {
+        currentIndex++;
+        const img = galleryItems[currentIndex].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryItems.length;
+        updateNavButtons();
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById('lightboxPrev').disabled = currentIndex === 0;
+      document.getElementById('lightboxNext').disabled = currentIndex === galleryItems.length - 1;
+    }
+
+    // Event bindings
+    galleryItems.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+    document.getElementById('lightboxNext').addEventListener('click', nextImage);
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+
+    // --- Page Turn Transition ---
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>

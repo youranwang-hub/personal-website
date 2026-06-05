@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王悠然</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="#projects" onclick="scrollToSection('projects', event)">项目</a></li>
+        <li><a href="#papers" onclick="scrollToSection('papers', event)">论文</a></li>
+        <li><a href="#research" onclick="scrollToSection('research', event)">科研</a></li>
+        <li><a href="#hobbies" onclick="scrollToSection('hobbies', event)">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="hero site-container">
+      <div class="hero-name">王悠然</div>
+      <div class="hero-tagline">软件工程 &middot; 北京交通大学</div>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        大一在读，以项目驱动学习。关注 AI 感知系统与智能交互，<br>同时对统计建模和机器人优化也有兴趣。喜欢简洁的表达。
+      </p>
+      <div class="hero-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </section>
+
+    <!-- 项目 -->
+    <section class="section site-container" id="projects">
+      <div class="section-label">项目</div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              上新了！我的饭
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-desc">北京交通大学食堂信息共享平台，Flask 全栈独立开发，已上线，覆盖 1,193 道菜品。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>菜品浏览、评分评论、社区交流与三餐打卡一站式平台。SSR 架构，独立完成全栈开发，部署于 PythonAnywhere。</p>
+            <p>覆盖 6 个食堂楼层、48 个档口、1,193 道菜品，含智能推荐、人流量提示、积分打卡排行榜等功能。</p>
+            <p><a href="project-new-meal.html">查看完整项目 &rarr;</a></p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python Flask</span>
+          <span class="project-tag">SQLite</span>
+          <span class="project-tag">Bootstrap 5</span>
+          <span class="project-tag">已上线</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              个人网站
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-desc">纸质感排版风格的个人主页，HTML + CSS 从零搭建。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>设计灵感来自纸质书籍的排版美学——米白底色、衬线字体、极细分隔线，以及克制的鼠标交互。</p>
+            <p>技术栈：原生 HTML / CSS，含翻页过渡动画与卡片展开交互。目标是做一个自己愿意长期维护的个人空间。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">交互设计</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              C 语言学生管理系统
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">2025</span>
+        </div>
+        <div class="project-desc">C 语言课程结课作业，命令行交互式学生信息管理系统。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>大一上学期 C 语言程序设计课程结课项目。实现学生信息的增删改查、成绩统计排序、文件持久化存储等功能，全命令行交互。</p>
+            <p>技术栈：C 语言，文件 I/O，链表数据结构。是编程入门的第一个完整项目。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">C 语言</span>
+          <span class="project-tag">数据结构</span>
+          <span class="project-tag">课程项目</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 论文 -->
+    <section class="section site-container" id="papers">
+      <div class="section-label">论文</div>
+
+      <div class="writing-entry">
+        <div class="wrapper">
+          <span class="award-badge">一等奖</span>
+          <span class="writing-date">2026 &middot; 北京交通大学统计建模大赛</span>
+        </div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">新质生产力冲击下的"人-产"错配与重构：AI 大模型对高校毕业生就业质量的异质性影响及区域产业匹配优化</div>
+        <div class="writing-excerpt">统计建模大赛一等奖作品。研究 AI 大模型冲击下高校毕业生就业质量的区域差异与产业匹配路径。</div>
+      </div>
+
+      <div class="writing-entry">
+        <div class="writing-date">2026 &middot; 北京交通大学数学建模大赛</div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">下肢外骨骼助力：机器人系统设计与优化问题</div>
+        <div class="writing-excerpt" style="display: flex; align-items: center; gap: 8px;">
+          <span>数学建模大赛参赛作品，研究下肢外骨骼机器人的系统设计与参数优化。</span>
+          <span style="font-size: 10px; color: var(--ink-hint); font-family: var(--serif); white-space: nowrap;">结果待公布</span>
+        </div>
+      </div>
+
+      <div class="writing-entry">
+        <div class="writing-date">2026 &middot; 课程论文</div>
+        <div class="writing-title" style="cursor: default; color: var(--ink);">智能驾驶纯视觉感知的瓶颈及其雷达融合补偿机制</div>
+        <div class="writing-excerpt">以小米 SU7 事故为核心背景案例，论证纯视觉感知瓶颈及雷达融合补偿的必要性，22 篇文献支撑。</div>
+      </div>
+
+    </section>
+
+    <!-- 科研 -->
+    <section class="section site-container" id="research">
+      <div class="section-label">科研</div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              面向交换机漏洞发掘的自动化闭环智能体设计与实现
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">大创项目</span>
+        </div>
+        <div class="project-desc">以 LLM + LangGraph 构建主动自优化智能体，实现固件漏洞的语义理解、动态路由与经验闭环积累。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>LLM 阅读固件反汇编代码实现语义理解，LangGraph 编排实现动态路由决策，漏洞特征自动写回知识库形成经验闭环。核心架构：感知环境→推理策略→执行行动→反馈进化。</p>
+            <p>技术方向：大语言模型、LangGraph 智能体框架、固件安全分析、自动化漏洞挖掘。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">LangGraph</span>
+          <span class="project-tag">固件安全</span>
+          <span class="project-tag">大创</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="toggleDetail(this)">
+        <div class="project-card-header">
+          <div>
+            <span class="project-title">
+              面向儿童英语发音的数字人口型与舌位可视化纠错系统
+              <span class="project-title-underline"></span>
+            </span>
+            <span class="expand-icon">&#9656;</span>
+          </div>
+          <span class="project-year">大创项目</span>
+        </div>
+        <div class="project-desc">大学生创新训练项目，通过数字人技术可视化英语发音的口型与舌位。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>以数字人技术为核心，构建儿童英语发音的视觉反馈系统，将抽象的音标纠错转化为直观的口型与舌位可视化展示。</p>
+            <p>方向涉及语音识别、计算机视觉、教育技术的交叉领域。</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">数字人</span>
+          <span class="project-tag">语音识别</span>
+          <span class="project-tag">大创</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 爱好 -->
+    <section class="section site-container" id="hobbies">
+      <div class="section-label">爱好</div>
+
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <div class="hobby-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y1="21"/><line x1="12" y1="17" x2="12" y1="21"/></svg>
+          </div>
+          <div class="hobby-title">摄影</div>
+          <div class="hobby-desc">喜欢用镜头记录生活里的细节，偏好街头和自然光。</div>
+          <a href="hobbies.html#photo-gallery" style="font-size: 10px; color: var(--ink-muted); font-family: var(--serif); text-decoration: none; letter-spacing: 0.5px; margin-top: 6px; display: inline-block;">浏览作品 &rarr;</a>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3L6 9v6l12 6V3z"/><circle cx="6" cy="12" r="2"/></svg>
+          </div>
+          <div class="hobby-title">吉他</div>
+          <div class="hobby-desc">在学，享受拨弦时的专注和安静。抖音: dyitnb93lmqm</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      if (href.startsWith('http') || href.startsWith('mailto')) return;
+      if (href.startsWith('#')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+
+    function scrollToSection(id, event) {
+      event.preventDefault();
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleDetail(card) {
+      const detail = card.querySelector('.project-detail');
+      const icon = card.querySelector('.expand-icon');
+      if (!detail) return;
+      document.querySelectorAll('.project-detail.open').forEach(d => {
+        if (d !== detail) {
+          d.classList.remove('open');
+          const c = d.closest('.project-card');
+          if (c) c.querySelector('.expand-icon')?.classList.remove('open');
+        }
+      });
+      detail.classList.toggle('open');
+      if (icon) icon.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
