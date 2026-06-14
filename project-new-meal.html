@@ -47,7 +47,7 @@
       <div class="detail-body">
         <h3>项目背景</h3>
         <p>北京交通大学食堂菜品丰富，但同学们选菜常靠运气、踩雷时有发生。「上新了！我的饭」希望为校园师生提供一个菜品浏览、评分评论、社区交流和三餐打卡的一站式平台，让每一次吃饭都有据可依。</p>
-        <p>目前已收录 <strong>6 个食堂楼层、48 个档口、1,193 道菜品</strong>，已上线运行。</p>
+        <p>目前已收录 <strong>8 个食堂、63 个档口、1,400 道菜品</strong>，已上线运行。</p>
 
         <h3>技术架构</h3>
         <p>整体采用服务端渲染（SSR）架构——Python Flask 通过 Jinja2 模板引擎直接渲染页面，前端仅处理少量交互逻辑（搜索联想、图片预览等），不引入前端框架，保持轻量和低依赖。</p>
@@ -65,7 +65,7 @@
             </tr>
             <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
               <td style="padding:6px 8px; color:var(--ink);">后端</td>
-              <td style="padding:6px 8px; color:var(--ink-secondary);">Python Flask + Jinja2</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Python Flask（模块化蓝图路由） + Jinja2</td>
             </tr>
             <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
               <td style="padding:6px 8px; color:var(--ink);">数据库</td>
@@ -75,23 +75,72 @@
               <td style="padding:6px 8px; color:var(--ink);">认证</td>
               <td style="padding:6px 8px; color:var(--ink-secondary);">Flask-Login + bcrypt 密码加密</td>
             </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">安全</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">CSRF Token 防护、session 管理</td>
+            </tr>
             <tr>
               <td style="padding:6px 8px; color:var(--ink);">部署</td>
-              <td style="padding:6px 8px; color:var(--ink-secondary);">PythonAnywhere</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">PythonAnywhere（WSGI）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>数据规模</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">食堂</th>
+              <th style="text-align:center; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">楼层</th>
+              <th style="text-align:center; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">菜品数</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">代表档口</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">东区食堂</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">一层</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">292</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">交大小笼包、重庆小面、炸鸡汉堡</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">学活食堂</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">三层</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">558</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">各类风味档口</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">学生四食堂</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">一层</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">90</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">减脂餐窗口</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">明湖食堂</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">两层</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">239</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">基本伙、面食、风味档口</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">西区食堂</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">一层</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">75</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">基本伙窗口</td>
             </tr>
           </tbody>
         </table>
 
         <h3>核心功能</h3>
         <p><strong>食堂 → 档口 → 菜品三级浏览</strong>：食堂详情展示营业时间与实时人流量，菜品支持五星评分（一人一票可修改）与 500 字文字评论。16 个品类配有 AI 生成的手绘水彩风格图片。</p>
-        <p><strong>智能首页</strong>：基于「评分×评论数」的推荐算法展示今日推荐，支持特价高亮（原价划线对比），以及根据北京时间自动判断早/午/晚餐时段的人流量提示。</p>
-        <p><strong>社区</strong>：用户可发帖（文字 + 最多 9 张图片 + 关联菜品），支持点赞、评论，发帖时菜名模糊匹配数据库。</p>
-        <p><strong>三餐打卡</strong>：早餐 +3 分 / 午晚餐 +2 分的积分体系，打卡日历展示当日各餐状态，积分排行榜 TOP 10。</p>
+        <p><strong>智能首页</strong>：基于「评分×评论数」的推荐算法展示今日推荐，支持特价高亮（原价划线对比）、本周上新轮播，以及根据北京时间自动判断早/午/晚餐时段的人流量提示。</p>
+        <p><strong>社区</strong>：用户可发帖（文字 + 最多 9 张图片 + 关联菜品），支持点赞、评论，发帖时菜名模糊匹配数据库。热门帖子 TOP 10 按点赞数排序。</p>
+        <p><strong>三餐打卡</strong>：早餐 +3 分 / 午晚餐 +2 分的积分体系，打卡日历展示当日各餐状态，积分排行榜 TOP 10，随机打卡语录 10 条。</p>
         <p><strong>管理后台</strong>：数据统计面板、用户管理、违规内容删除、特价菜品设置。</p>
 
         <h3>设计亮点</h3>
         <p><strong>时区处理</strong>：自定义 <code>beijing_now()</code> 函数，不依赖服务器本地时区，确保餐次提示、打卡日期、人流量判断在全球任意服务器上都能正确显示北京时间。</p>
         <p><strong>图片回退机制</strong>：<code>get_dish_image()</code> 三级回退——菜品自有图片 → 品类代表图 → 占位图标，保证任何菜品都有视觉展示。</p>
+        <p><strong>模块化路由</strong>：认证、主路由、社区、打卡、管理后台各自独立 Blueprint 模块，app.py 作为应用工厂负责组装，结构清晰。</p>
         <p><strong>响应式布局</strong>：PC 端顶部导航 + 移动端底部 TabBar，适配校园实际使用场景（手机为主）。</p>
 
         <p style="margin-top: 24px;">
