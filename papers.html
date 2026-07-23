@@ -32,30 +32,45 @@
     <section class="section site-container" style="padding-top: 0;">
 
       <!-- 统计建模一等奖 -->
-      <div class="writing-entry">
+      <div class="writing-entry" onclick="toggleDetail(this)" style="cursor: pointer;">
         <div class="wrapper">
           <span class="award-badge">一等奖</span>
-          <span class="writing-date">2026 &middot; 北京交通大学统计建模大赛</span>
+          <span class="writing-date">2026年5月 &middot; 北京交通大学统计建模大赛</span>
+          <span class="expand-icon" style="margin-left: auto;">&#9656;</span>
         </div>
-        <div class="writing-title" style="cursor: default; color: var(--ink);">新质生产力冲击下的"人-产"错配与重构：AI 大模型对高校毕业生就业质量的异质性影响及区域产业匹配优化</div>
-        <div class="writing-excerpt">以新质生产力为理论框架，分析 AI 大模型对不同专业、不同地区高校毕业生就业质量的差异化冲击，探讨区域产业匹配优化路径。</div>
+        <div class="writing-title">新质生产力冲击下的"人-产"错配与重构：AI 大模型对高校毕业生就业质量的异质性影响及区域产业匹配优化</div>
+        <div class="writing-excerpt">基于京津冀 228 份高校毕业生问卷数据，构建含薪资水平、专业匹配度等五维度的就业质量综合指数（EQI），以熵值法赋权，结合 Ordered Logit 与 PSM 核匹配实证分析 AI 大模型对就业质量的异质性影响。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p>立足于新质生产力发展背景，以 AI 大模型对劳动力市场的冲击为核心议题，基于京津冀地区 228 份高校毕业生问卷数据，构建了包含薪资水平、专业匹配度等五个维度的就业质量综合指数（EQI）。</p>
+            <p>采用熵值法进行指标赋权合成，并结合 Ordered Logit 模型、倾向得分匹配（PSM）核匹配以及异质性分组回归等计量方法开展实证检验，深入分析了 AI 大模型对不同群体就业质量的异质性影响，并探讨了区域产业匹配的优化路径。</p>
+          </div>
+        </div>
       </div>
 
       <!-- 数学建模三等奖 -->
-      <div class="writing-entry">
+      <div class="writing-entry" onclick="toggleDetail(this)" style="cursor: pointer;">
         <div class="wrapper">
           <span class="award-badge">三等奖</span>
-          <span class="writing-date">2026 &middot; 北京交通大学数学建模大赛</span>
+          <span class="writing-date">2026年6月 &middot; 北京交通大学数学建模大赛</span>
+          <span class="expand-icon" style="margin-left: auto;">&#9656;</span>
         </div>
-        <div class="writing-title" style="cursor: default; color: var(--ink);">下肢外骨骼助力：机器人系统设计与优化问题</div>
-        <div class="writing-excerpt">针对下肢外骨骼机器人的结构参数与运动控制进行数学建模与优化求解，获校级三等奖。</div>
+        <div class="writing-title">下肢外骨骼助力：机器人系统设计与优化问题</div>
+        <div class="writing-excerpt">分三个层次递进构建动力学与生理耦合模型：单关节 L1 范数优化实现 85.7% 肌肉力矩降幅，双关节 70% 重力补偿协同，疲劳演化分析求解不同负重最优助力系数。</div>
+        <div class="project-detail">
+          <div class="project-detail-inner">
+            <p><strong>单关节优化</strong>：针对单关节匀速抬腿工况，建立刚体转动方程，采用 L1 范数优化求解三段恒定助力策略，在能耗约束下实现了 85.7% 的肌肉力矩降幅。</p>
+            <p><strong>双关节协同</strong>：面向髋膝双关节行走场景，搭建二连杆拉格朗日动力学模型，采用 70% 重力补偿的柔顺分配方案，使峰值助力满足力矩上限并确保人机运动节奏匹配。</p>
+            <p><strong>疲劳演化分析</strong>：针对长时间负重疲劳问题，构建肌肉疲劳累积微分方程，推导临界负荷阈值，以股四头肌为约束，求解了 20kg、30kg、40kg 负重对应的最优助力系数，达到无持续疲劳、无限安全作业的效果。全文形成从单关节、双关节到疲劳演化的完整优化体系，并给出量化仿真结果与图表验证。</p>
+          </div>
+        </div>
       </div>
 
       <!-- 课程论文 -->
       <div class="writing-entry">
         <div class="writing-date">2026 &middot; 课程论文</div>
         <div class="writing-title" style="cursor: default; color: var(--ink);">智能驾驶纯视觉感知的瓶颈及其雷达融合补偿机制</div>
-        <div class="writing-excerpt">以小米 SU7 事故为核心背景案例，论证纯视觉感知在极端场景下的固有瓶颈，以及引入雷达多模态融合的必要性和补偿机制。已收集 22 篇中英文文献。</div>
+        <div class="writing-excerpt">以小米 SU7 事故为核心背景案例，论证纯视觉感知在极端场景下的固有瓶颈，以及引入雷达多模态融合的必要性和补偿机制。</div>
       </div>
 
     </section>
@@ -83,6 +98,21 @@
         setTimeout(() => { window.location.href = href; }, 560);
       });
     });
+
+    function toggleDetail(card) {
+      const detail = card.querySelector('.project-detail');
+      const icon = card.querySelector('.expand-icon');
+      if (!detail) return;
+      document.querySelectorAll('.project-detail.open').forEach(d => {
+        if (d !== detail) {
+          d.classList.remove('open');
+          const c = d.closest('.writing-entry');
+          if (c) c.querySelector('.expand-icon')?.classList.remove('open');
+        }
+      });
+      detail.classList.toggle('open');
+      if (icon) icon.classList.toggle('open');
+    }
   </script>
 
 </body>

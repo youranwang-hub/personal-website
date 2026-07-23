@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memolog · 项目详情</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <div class="site-container" style="margin-bottom: 24px;">
+      <a href="projects.html" class="back-link">
+        <span class="back-arrow">&larr;</span>
+        返回项目列表
+      </a>
+    </div>
+
+    <section class="page-header site-container">
+      <div class="page-title">Memolog</div>
+      <div class="page-subtitle">把真实经历沉淀为可检索、可复用的个人记忆库</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+      <div class="detail-meta">
+        <div class="detail-meta-item">时间 <span>2026.06</span></div>
+        <div class="detail-meta-item">角色 <span>独立全栈开发</span></div>
+        <div class="detail-meta-item">前端 <span>Next.js 16 + React 19 + TypeScript</span></div>
+        <div class="detail-meta-item">样式 <span>Tailwind CSS 4 + shadcn/ui</span></div>
+        <div class="detail-meta-item">后端 <span>Supabase（PostgreSQL + RLS）</span></div>
+        <div class="detail-meta-item">AI <span>DeepSeek API</span></div>
+      </div>
+
+      <div class="detail-body">
+        <h3>项目背景</h3>
+        <p>学生和初入职场的人常常面临一个问题：做过的事情散落在聊天记录、备忘录和记忆里，真正需要写简历、准备自我介绍时却想不起细节。Memolog 不是通用聊天工具，而是一个面向个人用户的<strong>"第二大脑"</strong>——随手记录经历，AI 自动整理为结构化记忆，并在需要时从真实记忆中生成内容。</p>
+
+        <h3>技术架构</h3>
+        <p>前后端分离的现代化全栈架构。前端基于 Next.js 16 的 App Router 构建，后端依托 Supabase 的 PostgreSQL 数据库与 Row Level Security（RLS）策略处理用户认证与数据隔离，AI 能力通过服务端 API Route 集成 DeepSeek，密钥不暴露到浏览器端。</p>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">层级</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">技术选型</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">框架</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Next.js 16 + React 19 + TypeScript</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">UI</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Tailwind CSS 4 + shadcn/ui / Base UI</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">数据库</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Supabase PostgreSQL（3 张表 + RLS 行级安全）</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">认证</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Supabase Auth + 邀请码</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">AI</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">DeepSeek API（服务端 Route，密钥不外泄）</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">部署</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Vercel</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>核心功能</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">模块</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">AI 整理记忆</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">输入一段自然语言经历，AI 提取日期、分类、标题、成果、内容、情绪与标签；保存前可逐项修改</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">日期与阶段</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">支持单日和阶段性经历；自定义日历可按月或按年切换</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">记忆库</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">按关键词、分类、时间筛选；支持查看、编辑和删除单条记忆</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">个人分类</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">在"档案"中自由添加或删除分类，记录、筛选与图谱会同步使用</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">记忆图谱</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">按分类、经历和标签展示关联，帮助发现经历之间的联系</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">AI 生成</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">基于个人档案和真实记忆生成简历、自我介绍或自定义内容</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">生成历史</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">自动保存生成内容，AI 为新记录提炼短标题作为索引；正文支持 Markdown 渲染，原始需求可折叠查看</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>数据模型</h3>
+        <p>Supabase 初始化脚本创建 3 张表，每张表均启用 RLS 行级安全策略，用户只能访问自己的数据：</p>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">表名</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>memories</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">用户记忆（日期、分类、标题、成果、内容、情绪、标签、阶段结束日期）</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>profiles</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">个人档案和自定义分类数组</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);"><code>generated_histories</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">AI 生成历史（短标题索引 + Markdown 正文 + 原始需求）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>项目结构</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">路径</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">职责</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>app/api/claude/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">AI 提炼与生成接口（服务端 Route）</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>app/dashboard/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">记忆库与图谱</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>app/generate/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">简历、自我介绍与自定义生成</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>app/memory/[id]/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">单条记忆详情与编辑</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>app/profile/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">个人档案与分类管理</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);"><code>components/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">登录态外壳 / 记忆表单卡片图谱 / 复用 UI</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);"><code>lib/</code></td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">Supabase、AI、日期和数据访问封装</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>安全与隐私</h3>
+        <p><strong>RLS 行级安全</strong>：数据按 Supabase 用户 ID 隔离，数据库层面限制每条记录只有创建者可读写。</p>
+        <p><strong>密钥隔离</strong>：DeepSeek API Key 仅在服务端 Route 中使用，使用 <code>DEEPSEEK_API_KEY</code> 环境变量（不带 <code>NEXT_PUBLIC_</code> 前缀），确保不暴露到浏览器端。</p>
+        <p><strong>邀请码注册</strong>：可选配置 <code>INVITE_CODE</code> 环境变量，限制注册范围。</p>
+
+        <p style="margin-top: 24px;">
+          <a href="https://memolog-v6nv.vercel.app/" target="_blank">访问线上版本 &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能物流配送终端 · 项目详情</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-turn-overlay" id="pageOverlay"></div>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo">王悠然</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">项目</a></li>
+        <li><a href="papers.html">论文</a></li>
+        <li><a href="research.html">科研</a></li>
+        <li><a href="hobbies.html">爱好</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <div class="site-container" style="margin-bottom: 24px;">
+      <a href="projects.html" class="back-link">
+        <span class="back-arrow">&larr;</span>
+        返回项目列表
+      </a>
+    </div>
+
+    <section class="page-header site-container">
+      <div class="page-title">智能物流配送终端</div>
+      <div class="page-subtitle">STM32F407 嵌入式综合项目 · 小学期实验</div>
+    </section>
+
+    <section class="section site-container" style="padding-top: 0;">
+      <div class="detail-meta">
+        <div class="detail-meta-item">时间 <span>2026.07</span></div>
+        <div class="detail-meta-item">角色 <span>独立完成</span></div>
+        <div class="detail-meta-item">MCU <span>STM32F407ZGT6 · ARM Cortex-M4 · 168MHz</span></div>
+        <div class="detail-meta-item">开发板 <span>青软遨游 QST-AU100</span></div>
+        <div class="detail-meta-item">环境 <span>Keil MDK 5.25 · StdPeriph Lib V1.4.0</span></div>
+      </div>
+
+      <div class="detail-body">
+        <h3>项目概述</h3>
+        <p>软件学院小学期 STM32F4 系列实验，系统性地完成 <strong>22 个实验</strong>，涵盖基础外设驱动到多模块综合应用。最终将 <strong>12 个外设模块</strong>整合为「智能物流配送终端」综合项目，模拟冷链运输全流程：司机认证 &rarr; GPS 定位 &rarr; 环境监控 &rarr; 签收确认 &rarr; 记录存档。</p>
+
+        <h3>实验体系</h3>
+        <p>22 个实验分五个阶段递进展开，从 GPIO 点灯到指纹识别与 NFC 读写，逐步建立对 STM32 时钟系统、中断优先级、标准外设库的扎实理解。</p>
+
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">阶段</th>
+              <th style="text-align:center; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">数量</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">实验内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">基础外设</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">11</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">GPIO LED / 蜂鸣器 / 按键消抖 / 外部中断 EXTI / USART 串口通信 / TIM 定时器中断 / PWM 呼吸灯 / ADC 电位器 / DAC 锯齿波 / DMA 传输 / RTC 日历</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">传感器</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">2</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">DHT11 单总线温湿度 / MQ2 模拟燃气 ADC 采集</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">总线与协议</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">4</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">I&sup2;C 驱动 AT24C02 E2PROM / SPI 驱动 W25Q64 FLASH / CAN 总线 LoopBack 收发 / UART 解析 GPS NMEA 报文</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">人机交互</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">3</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ILI9341 LCD 显示（FSMC 8080 并口）/ XPT2046 电阻触摸屏校准 / 红外 NEC 协议编码发送与解码接收</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">综合应用</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary); text-align:center;">2</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ZN632 指纹录入与 1:N 匹配 / PN532 对 Mifare S50 NFC 标签读写</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>综合项目：冷链物流模拟</h3>
+        <p>将 12 个模块整合为生鲜冷链运输场景。由于实验在室内进行，部分场景通过等效方式模拟：手指捏 DHT11 模拟温度超标、酒精棉片靠近 MQ2 模拟火灾预警、红外遥控器模拟收货人签收。</p>
+
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:center; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">菜单</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">功能</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">涉及模块</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">1</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">身份认证（指纹 或 触摸屏右滑解锁）</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ZN632 / XPT2046 + LCD</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">2</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">GPS 单次定位，自动返回</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">LC86L + UART4</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">3</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">温湿度 + 可燃气体循环监控，超限报警</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">DHT11 + MQ2 + LED/Buzzer</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">4</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">LCD 全屏刷新（标题 + 司机 + 时间 + 日期）</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ILI9341 + RTC + E2PROM</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">5</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">IR 遥控签收 &rarr; 蜂鸣器 + FLASH 存记录</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">IR + W25Q64</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">6</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">FLASH 历史签收记录导出</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">W25Q64</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">7</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">CAN LoopBack 自测</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">bxCAN</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink); text-align:center;">0</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">退出，LCD 显示 "System Off"</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>硬件资源</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:var(--serif); margin:12px 0;">
+          <thead>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.12);">
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">模块</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">芯片/外设</th>
+              <th style="text-align:left; padding:6px 8px; font-weight:500; color:var(--ink-secondary);">接口</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">DHT11 温湿度</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">DHT11</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">单总线 PE6</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">MQ2 燃气</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">MQ2</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ADC1 CH12 (PC2)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">FLASH 存储</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">W25Q64</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">SPI1 (PA5/6/7, PC0)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">E2PROM 存储</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">AT24C02</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">I2C1 (PB6/7)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">GPS 定位</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">LC86L</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">UART4 (PC10/11) @9600</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">指纹识别</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ZN632</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">UART4 (PC10/11) @57600</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">LCD 显示</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">ILI9341</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">FSMC 8080 并口</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">触摸屏</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">XPT2046</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">软件 SPI (PE0/2/3, PD13)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">IR 红外接收</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">VS1838</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">TIM9 CH1 (PE5)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">CAN 总线</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">bxCAN</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">LoopBack (PA11/12)</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid rgba(0,0,0,0.06);">
+              <td style="padding:6px 8px; color:var(--ink);">RTC 时钟</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">LSE 32.768kHz</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">PC14/15</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:var(--ink);">LED / 蜂鸣器</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">GPIO</td>
+              <td style="padding:6px 8px; color:var(--ink-secondary);">PB0/1/5, PA8</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>关键设计</h3>
+        <p><strong>触摸屏右滑认证</strong>：指纹硬件故障时的备用方案。检测触摸起止 X 坐标差 &gt;100 像素即判定有效。</p>
+        <p><strong>UART4 分时复用</strong>：GPS (9600bps) 和指纹 (57600bps) 共享 PC10/PC11，各自 Init 重配波特率，GPS 退出时关闭 UART4 中断防止干扰主循环。</p>
+        <p><strong>GPS 单次定位 + 自动返回</strong>：获取到有效坐标或 30 秒超时即返回，任意键可中止。</p>
+        <p><strong>统一蜂鸣器控制</strong>：每轮传感器采样末尾根据 <code>alert</code> 标志位统一开关蜂鸣器，避免残留状态。</p>
+        <p><strong>FLASH 追加写入</strong>：IR 签收回调中 <code>static flash_offset</code> 累加偏移，首次写擦除扇区。</p>
+        <p><strong>E2PROM 存储司机名</strong>：首次上电写入 "Wang"，后续从 E2PROM 读出，断电不丢失。</p>
+        <p><strong>LCD 全覆盖更新</strong>：每个菜单进入时立即更新 LCD 状态，而非等子菜单输入完成后才更新。</p>
+
+        <p style="margin-top: 24px;">
+          <a href="https://github.com/youranwang-hub/Harmony" target="_blank">查看 GitHub 仓库源码 &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">&copy; 2026 &mdash; 保持简洁</div>
+      <div class="footer-links">
+        <a href="https://github.com/youranwang-hub" target="_blank">GitHub</a>
+        <a href="mailto:youranwang636@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('pageOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  </script>
+
+</body>
+</html>
